@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from  '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -14,11 +14,14 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {TextFieldModule} from '@angular/cdk/text-field';
+import { ViewAllComponent } from './pages/view-all/view-all.component';
+import {MatGridListModule} from "@angular/material/grid-list";
 
 @NgModule({
   declarations: [
     AppComponent,
-    CreatePostComponent
+    CreatePostComponent,
+    ViewAllComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,10 @@ import {TextFieldModule} from '@angular/cdk/text-field';
     MatSnackBarModule,
     ReactiveFormsModule,
     MatFormFieldModule,
-    TextFieldModule
+    TextFieldModule,
+    HttpClientModule,
+    MatGridListModule
+
 
   ],
   providers: [],
