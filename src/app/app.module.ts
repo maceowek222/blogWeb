@@ -16,6 +16,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {TextFieldModule} from '@angular/cdk/text-field';
 import { ViewAllComponent } from './pages/view-all/view-all.component';
 import {MatGridListModule} from "@angular/material/grid-list";
+import {MatTableModule} from "@angular/material/table";
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import {MatGridListModule} from "@angular/material/grid-list";
     MatFormFieldModule,
     TextFieldModule,
     HttpClientModule,
-    MatGridListModule
+    MatGridListModule,
+    MatTableModule
 
 
   ],

@@ -2,11 +2,10 @@
   <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
     <mat-icon>menu</mat-icon>
   </button>
-  <span>My App</span>
+  <span>Rocket radar</span>
   <span class="example-spacer"></span>
 
-  <button mat-raised-button color="primary" routerLink="/create-post">Create New Post</button>
-  <button mat-raised-button color="primary" routerLink="/view-all">View All Posts</button>
+  <button mat-raised-button color="primary" routerLink="/view-all">Najbliższe loty</button>
 
   <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
     <mat-icon>favorite</mat-icon>
@@ -14,7 +13,17 @@
   <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
     <mat-icon>share</mat-icon>
   </button>
+
+  <mat-form-field class="example-full-width" appearance="fill">
+  <mat-label>Szukaj</mat-label>
+  <input matInput placeholder="Search">
+
+</mat-form-field>
 </mat-toolbar>
 
+<mat-toolbar class="footer" color="primary">
+  <span class="example-spacer"></span>
+  <button mat-raised-button color="primary" routerLink="/create-post">Panel admina</button>
+</mat-toolbar>
 <router-outlet></router-outlet>
 
