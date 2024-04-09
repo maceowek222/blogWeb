@@ -1,0 +1,34 @@
+<div class="main">
+<div class="card-container" *ngFor="let item of visiblePosts" >
+  <mat-card  >
+    <mat-card-header>
+      <img mat-card-image src="{{item.image}}" class="post-img" alt="Card Image">
+    </mat-card-header>
+    <mat-card-title>{{item.name}}</mat-card-title>
+
+        <mat-card-content>
+         {{item.content.length>30 ? (item.content | slice:0:100)+'...':item.content}}
+        </mat-card-content>
+
+
+    <hr>
+
+    <mat-card-footer>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-subtitle>Posted by:{{item.postetBy}} | Posted On: {{item.date | date:'mdeium'}}</mat-card-subtitle>
+    </mat-card-footer>
+    <mat-card-actions>
+      <button mat-raised-button color="primary">{{item.likeCount}}<mat-icon>favorite</mat-icon></button>
+      <button mat-raised-button color="primary" style="margin-left: 5px;">{{item.viewCount}}
+        <mat-icon>remove_red_eye</mat-icon></button>
+      <button mat-raised-button color="primary" style="margin-left:5px;">View Post</button>
+
+
+    </mat-card-actions>
+  </mat-card>
+</div>
+  </div>
+
+<button mat-button (click)="previousPage()" [disabled]="currentPage === 0" style="margin-left: 10%;">Poprzednia strona</button>
+<button mat-button (click)="nextPage()" [disabled]="(currentPage + 1) * pageSize  >= allPosts.length" style="margin-top: -50px; margin-left: 80%;">Następna strona</button>
+

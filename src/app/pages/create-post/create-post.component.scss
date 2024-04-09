@@ -1,0 +1,30 @@
+.center-card{
+  max-width: 600px;
+  margin-top: 20px;
+  margin-left: 50px;
+  padding: 30px;
+  -webkit-box-shadow: 5px 11px 24px 0px rgba(156, 159, 222, 1);
+  -moz-box-shadow: 5px 11px 24px 0px rgba(156, 159, 222, 1);
+  box-shadow: 5px 11px 24px 0px rgba(156, 159, 222, 1);
+  border-radius: 30px;
+}
+mat-form-field {
+  width: 100%;
+}
+.lista{
+  display: flex;
+  justify-content: space-between; // evenly distribute items along the row
+  align-items: center;
+  flex-direction: row; // change this to row
+  width: 30%; // take up the full width of the parent
+  margin-top: -500px;
+  margin-left: 800px;
+}
+.photo{
+  margin-top: 20px;
+  color: gray;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+

@@ -1,0 +1,68 @@
+<div class="glowny">
+
+  <mat-card class="center-card">
+    <mat-card-content>
+
+      <div>
+
+        <div class="photo">
+          <input type="file" (change)="uploadImage($event)" name="file">
+          <button mat-raised-button color="primary" style="float: right;" [disabled]="!imageForm.get('image')?.value" type="button" (click)="postImage()">
+            Prześlij zdjęcie na serwer
+          </button>
+        </div>
+
+        <form [formGroup]="postForm" (ngSubmit)="createPost()">
+          <mat-form-field appearance="fill">
+            <mat-label>Tytuł</mat-label>
+            <input matInput formControlName="name">
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Link do zdjęcia</mat-label>
+            <input matInput formControlName="image" >
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Krótki opis</mat-label>
+            <textarea matInput rows="5" formControlName="content"></textarea>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Napisane przez</mat-label>
+            <input matInput formControlName="postedBy">
+          </mat-form-field>
+
+          <button mat-raised-button color="primary" style="float: right;" [disabled]="!postForm.valid">
+            Opublikuj
+          </button>
+        </form>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<div class="lista">
+  <mat-table [dataSource]="posts" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="postNumber">
+      <mat-header-cell *matHeaderCellDef>Numer posta</mat-header-cell>
+      <mat-cell *matCellDef="let post; let i = index">{{ i + 1 }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="postTitle">
+      <mat-header-cell *matHeaderCellDef>Tytuł posta</mat-header-cell>
+      <mat-cell *matCellDef="let post">{{ post.name }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="button">
+      <mat-header-cell *matHeaderCellDef>Usuń post</mat-header-cell>
+      <mat-cell *matCellDef="let post">
+        <button mat-icon-button color="warn">X</button>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>
