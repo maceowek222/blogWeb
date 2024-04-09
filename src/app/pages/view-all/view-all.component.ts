@@ -21,14 +21,19 @@ export class ViewAllComponent implements OnInit {
   }
 
   getAllPosts() {
-    this.postService.getAllPosts().subscribe(res => {
-      console.log(res);
-      this.allPosts = res;
-      this.updateVisiblePosts();
-    }, error => {
-      this.snackBar.open("Failed to fetch posts", "OK");
-    });
+    this.postService.getAllPosts().subscribe(
+      res => {
+        console.log(res);
+        res.sort((a: { id: number; }, b: { id: number; }) => b.id - a.id);
+        this.allPosts = res;
+        this.updateVisiblePosts();
+      },
+      error => {
+        this.snackBar.open("Failed to fetch posts", "OK");
+      }
+    );
   }
+
 
   updateVisiblePosts() {
     const startIndex = this.currentPage * this.pageSize;

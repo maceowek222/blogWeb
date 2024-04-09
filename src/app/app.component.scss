@@ -1,10 +1,18 @@
 body {
   display: flex;
-  flex-direction: column;
+  background-image: url("https://www.teahub.io/photos/full/279-2791459_minimalist-wallpaper-4k.jpg");
+  background-size: cover;
+  background-blend-mode: color;
+
 }
 
 mat-toolbar {
   margin-top: auto;
+  background-color: #181b28;
+}
+.title{
+  margin-right: 10px;
+
 }
 
 .footer {

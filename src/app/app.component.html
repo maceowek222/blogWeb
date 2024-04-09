@@ -1,11 +1,11 @@
 <mat-toolbar color="primary">
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-    <mat-icon>menu</mat-icon>
-  </button>
-  <span>Rocket radar</span>
+  <span class="title">Rocket radar  </span>
+  <mat-icon>rocket_launch</mat-icon>
   <span class="example-spacer"></span>
 
-  <button mat-raised-button color="primary" routerLink="/view-all">Najbliższe loty</button>
+
+
+  <button mat-raised-button  routerLink="/view-all">Najbliższe loty</button>
 
   <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
     <mat-icon>favorite</mat-icon>
@@ -23,7 +23,8 @@
 
 <mat-toolbar class="footer" color="primary">
   <span class="example-spacer"></span>
-  <button mat-raised-button color="primary" routerLink="/create-post">Panel admina</button>
+  <button class="przycisk" mat-raised-button  routerLink="/create-post">Panel admina</button>
 </mat-toolbar>
-<router-outlet></router-outlet>
-
+<body>
+<router-outlet ></router-outlet>
+</body>
