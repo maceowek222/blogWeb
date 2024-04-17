@@ -9,9 +9,11 @@ import { MatSnackBar } from "@angular/material/snack-bar";
 })
 export class ViewAllComponent implements OnInit {
   allPosts: any[] = [];
-  visiblePosts: any[] = [];
+  visiblePosts = this.allPosts;
   currentPage: number = 0;
   pageSize: number = 3;
+  value: string = '';
+
 
   constructor(private postService: PostService,
               private snackBar: MatSnackBar) {}
@@ -52,6 +54,17 @@ export class ViewAllComponent implements OnInit {
     if (this.currentPage < lastPage) {
       this.currentPage++;
       this.updateVisiblePosts();
+    }
+  }
+
+  searchPosts(searchText: string) {
+    if (searchText) {
+      this.visiblePosts = this.allPosts.filter(post =>
+        post.name.toLowerCase().includes(searchText.toLowerCase()) ||
+        post.content.toLowerCase().includes(searchText.toLowerCase())
+      );
+    } else {
+      this.visiblePosts = this.allPosts;
     }
   }
 }
