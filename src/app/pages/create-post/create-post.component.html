@@ -47,7 +47,7 @@
 
     <ng-container matColumnDef="postNumber">
       <mat-header-cell *matHeaderCellDef>Numer posta</mat-header-cell>
-      <mat-cell *matCellDef="let post; let i = index">{{ i + 1 }}</mat-cell>
+      <mat-cell *matCellDef="let post">{{ post.id }}</mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="postTitle">
@@ -58,7 +58,7 @@
     <ng-container matColumnDef="button">
       <mat-header-cell *matHeaderCellDef>Usuń post</mat-header-cell>
       <mat-cell *matCellDef="let post">
-        <button mat-icon-button color="warn">X</button>
+        <button mat-icon-button color="warn" (click)="deletePost(post.id)">X</button>
       </mat-cell>
     </ng-container>
 

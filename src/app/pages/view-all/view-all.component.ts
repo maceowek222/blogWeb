@@ -13,6 +13,7 @@ export class ViewAllComponent implements OnInit {
   currentPage: number = 0;
   pageSize: number = 3;
   value: string = '';
+  expandedPostId: number | null = null;
 
 
   constructor(private postService: PostService,
@@ -20,6 +21,13 @@ export class ViewAllComponent implements OnInit {
 
   ngOnInit() {
     this.getAllPosts();
+  }
+  expandPost(postId: number): void {
+    this.expandedPostId = postId;
+  }
+
+  collapsePost(): void {
+    this.expandedPostId = null;
   }
 
   getAllPosts() {

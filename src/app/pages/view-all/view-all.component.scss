@@ -4,7 +4,7 @@
   justify-content: space-between;
   align-items: center;
   margin: 16px;
-  max-width: 25%;
+  width: 25%;
   border-radius: 30%;
   height: 500px;
   -webkit-box-shadow: 5px 11px 24px 0px rgb(184, 175, 127);
@@ -17,7 +17,7 @@
 
 mat-card{
 
-  width: 100%;
+  max-width: 100%;
   height: 100%;
   padding: 10px;
   border-radius: 10%;
@@ -36,6 +36,8 @@ mat-card-content{
   width: 90%;
   padding-top: 20px;
   margin-bottom: 60px;
+  text-align: justify;
+
 }
 
 mat-card-title{
@@ -93,4 +95,10 @@ mat-card-header {
   flex-direction: row;
   margin-top: 30px;
 }
-
+.wyszukiwanie{
+  display: flex;
+  margin-top: -40px;
+  margin-left: 950px;
+  width: 180px;
+  height: 15px;
+}

@@ -24,4 +24,8 @@ export class PostService {
     formData.append('file', imageFile);
     return this.http.post(BASE_URL + '/images/db/upload', formData);
   }
+
+  deletePost(postId: number): Observable<any> {
+    return this.http.delete(`http://localhost:8081/posts/${postId}`);
+  }
 }

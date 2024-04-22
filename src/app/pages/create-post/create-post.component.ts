@@ -4,6 +4,8 @@ import { Router } from "@angular/router";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { PostService } from "../../service/post.service";
 
+
+
 @Component({
   selector: 'app-create-post',
   templateUrl: './create-post.component.html',
@@ -87,5 +89,11 @@ export class CreatePostComponent implements OnInit {
     } else {
       this.snackBar.open('Please upload an image', 'OK');
     }
+  }
+  deletePost(postId: number): void {
+    this.postService.deletePost(postId).subscribe(() => {
+      // Aktualizuj listę postów po usunięciu
+      this.getAllPosts();
+    });
   }
 }
